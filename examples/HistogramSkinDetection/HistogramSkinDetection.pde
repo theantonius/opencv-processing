@@ -16,7 +16,9 @@ Mat skinHistogram;
 void setup(){
   src = loadImage("test.jpg");
   src.resize(src.width/2, 0);
-  size(src.width*2 + 256, src.height);
+  println(src.width*2 + 256, src.height);
+  size(1336, 360);
+  
   // third argument is: useColor
   opencv = new OpenCV(this, src, true);  
 

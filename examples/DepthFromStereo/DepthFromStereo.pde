@@ -15,8 +15,9 @@ void setup() {
 
   ocvR = new OpenCV(this, imgR);
 
-  size(ocvL.width * 2, ocvL.height*2);
-
+  println(ocvL.width * 2, ocvL.height*2);
+  size(768,576);
+  
   ocvL.gray();
   ocvR.gray();
   Mat left = ocvL.getGray();
@@ -55,4 +56,3 @@ void draw() {
   text("stereo SGBM", 10, imgL.height + 20);
   text("stereo BM", 10 + imgL.width, imgL.height+ 20);
 }
-

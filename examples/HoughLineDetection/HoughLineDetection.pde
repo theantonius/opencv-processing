@@ -6,7 +6,8 @@ ArrayList<Line> lines;
 void setup() {
   PImage src = loadImage("film_scan.jpg");
   src.resize(0, 800);
-  size(src.width, src.height);
+  println(src.width, src.height);
+  size(796, 800);
 
   opencv = new OpenCV(this, src);
   opencv.findCannyEdges(20, 75);
@@ -35,4 +36,3 @@ void draw() {
     }
   }
 }
-

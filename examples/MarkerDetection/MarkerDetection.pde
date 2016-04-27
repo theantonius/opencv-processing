@@ -23,7 +23,8 @@ boolean[][] markerCells;
 
 void setup() {
   opencv = new OpenCV(this, "marker_test.jpg");
-  size(opencv.width, opencv.height/2);
+  println(opencv.width, opencv.height/2);
+  size(1000,365);
   src = opencv.getInput();
 
   // hold on to this for later, since adaptiveThreshold is destructive
@@ -209,4 +210,3 @@ void draw() {
 
   popMatrix();
 }
-

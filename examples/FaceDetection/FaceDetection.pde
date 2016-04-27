@@ -6,7 +6,8 @@ Rectangle[] faces;
 
 void setup() {
   opencv = new OpenCV(this, "test.jpg");
-  size(opencv.width, opencv.height);
+  println(opencv.width, opencv.height);
+  size(1080, 720);
 
   opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);  
   faces = opencv.detect();
@@ -22,4 +23,3 @@ void draw() {
     rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
   }
 }
-

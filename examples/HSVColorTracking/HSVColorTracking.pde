@@ -22,13 +22,17 @@ int rangeLow = 20;
 int rangeHigh = 35;
 
 void setup() {
-  video = new Capture(this, 640, 480);
+  size(2560,720);
+  String[] cameras = Capture.list();
+  video = new Capture(this, cameras[0]);
   video.start();
-  
-  opencv = new OpenCV(this, video.width, video.height);
+  while(!video.available()){
+    println("waiting for video");
+  }
+  opencv = new OpenCV(this, 1280,720);
   contours = new ArrayList<Contour>();
   
-  size(2*opencv.width, opencv.height, P2D);
+  println(2*opencv.width, opencv.height);
 }
 
 void draw() {
@@ -36,7 +40,7 @@ void draw() {
   // Read last captured frame
   if (video.available()) {
     video.read();
-  }
+
 
   // <2> Load the new frame of our movie in to OpenCV
   opencv.loadImage(video);
@@ -92,6 +96,8 @@ void draw() {
     fill(255, 0, 0);
     ellipse(r.x + r.width/2, r.y + r.height/2, 30, 30);
   }
+  
+    }
 }
 
 void mousePressed() {

@@ -39,8 +39,8 @@ void setup() {
   opencv = new OpenCV(this, video.width, video.height);
   contours = new ArrayList<Contour>();
   
-  size(opencv.width + opencv.width/4 + 30, opencv.height, P2D);
-  
+  println(opencv.width + opencv.width/4 + 30, opencv.height, P2D);
+  size(830, 480);
   // Array for detection colors
   colors = new int[maxColors];
   hues = new int[maxColors];
